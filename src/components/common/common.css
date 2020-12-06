@@ -1,0 +1,25 @@
+/* CommonHeader */
+.header {
+  display: flex;
+  color: #fff;
+}
+
+.ant-layout-header {
+  background: #000;
+}
+
+.ant-menu-horizontal {
+  background: #000;
+  color: #fff;
+  border-bottom: 1px solid #000;
+}
+
+.common-dropdown {
+  margin-left: auto;
+}
+
+.common-icon {
+  font-size: 20px;
+  color: #fff;
+  margin-left: 5px;
+}
