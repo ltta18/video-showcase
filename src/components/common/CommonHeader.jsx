@@ -2,6 +2,7 @@ import { Header } from 'antd/lib/layout/layout';
 import { Menu, Dropdown } from 'antd';
 import { UserOutlined, DownOutlined } from '@ant-design/icons';
 import "./common.css";
+import Search from 'antd/lib/input/Search';
 
 const menu = (
   <Menu>
@@ -19,21 +20,26 @@ const menu = (
   </Menu>
 );
 
+const onSearch = value => console.log(value);
+
 function CommonHeader() {
   return (
-        <Header className="header">
+        <Header className="header fl">
           <div className="logo">Haydenfilms</div>
           <Menu mode="horizontal" defaultSelectedKeys={['1']}>
             <Menu.Item key="1">Home</Menu.Item>
             <Menu.Item key="2">Movies</Menu.Item>
             <Menu.Item key="3">Popular</Menu.Item>
           </Menu>
-          <Dropdown theme="dark" overlay={menu} className="common-dropdown">
-            <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-              <UserOutlined className="common-icon" />
-              <DownOutlined className="common-icon" />
-            </a>
-          </Dropdown>
+          <div className="common-header-right fl-center">
+            <Search placeholder="Enter movie's name" onSearch={onSearch} enterButton />
+            <Dropdown theme="dark" overlay={menu} className="fl-center common-dropdown">
+              <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                <UserOutlined className="common-icon" />
+                <DownOutlined className="common-icon" />
+              </a>
+            </Dropdown>
+          </div>
         </Header>
   );
 }

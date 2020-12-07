@@ -1,6 +1,5 @@
 /* CommonHeader */
 .header {
-  display: flex;
   color: #fff;
 }
 
@@ -14,8 +13,12 @@
   border-bottom: 1px solid #000;
 }
 
-.common-dropdown {
+.common-header-right {
   margin-left: auto;
+}
+
+.common-dropdown {
+  margin-left: 10px;
 }
 
 .common-icon {
