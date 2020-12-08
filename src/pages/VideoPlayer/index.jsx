@@ -16,36 +16,19 @@ import LoadingSpinner from "video-react/lib/components/LoadingSpinner";
 const VideoPlayer = () => {
   const player = useRef();
 
-  const setMuted = muted => {
-    player.muted = muted;
-  }
-
-  const handleStateChange = state => {
-    // copy player state to this component's state
-    player.current = state
-  }
-
   const play = () => {
     player.current.actions.play();
   }
 
-  const changeCurrentTime = seconds => {
-    const { currentTime } = player.current.video.video;
-    player.current.actions.seek(currentTime + seconds);
-  }
+  useEffect(() => {
+    player && play();
+  }, [])
 
-  const seek = (seconds) => {
-    player.current.actions.seek(seconds);
-  }
-
-  const changeVolume = (steps) => {
-    const { volume } = player.current.video.video;
-    player.current.video.video.volume = volume + steps;
-  }
-
-  // useEffect(() => {
-  //   player && play();
-  // }, [])
+  useEffect(() => {
+    if (player && player.current.manager.store.getState().paused) {
+      console.log(2)
+    }
+  }, [player])
 
   return (
     <>
@@ -56,6 +39,7 @@ const VideoPlayer = () => {
           ref={player}
           className="video-player"
           fluid={false}
+          height="100%"
           autoPlay
           src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
         >

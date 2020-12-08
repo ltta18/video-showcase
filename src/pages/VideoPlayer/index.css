@@ -12,9 +12,10 @@
   opacity: 0;
   font-size: 30px;
   cursor: pointer;
-  transition: opacity 0.5s;
+  transition: opacity 0.5s ease-in 3s;
 }
 
-.back-arrow:hover {
+.back-arrow:hover, body:hover .back-arrow {
+  transition: opacity 0.5s ;
   opacity: 1;
 }
