@@ -1,17 +1,19 @@
-import { Button, Card } from "antd";
-import { useEffect, useRef, useState } from "react";
-import { Player, playerReducer } from 'video-react';
+import {
+  useEffect,
+  useRef
+} from "react";
+import { Player } from 'video-react';
+import { ArrowLeftOutlined } from '@ant-design/icons';
 import ControlBar from "video-react/lib/components/control-bar/ControlBar";
-import { ArrowLeftOutlined, PauseOutlined, ForwardOutlined, BackwardOutlined } from '@ant-design/icons';
-import 'video-react/dist/video-react.css';
 import ReplayControl from "video-react/lib/components/control-bar/ReplayControl";
 import ForwardControl from "video-react/lib/components/control-bar/ForwardControl";
 import CurrentTimeDisplay from "video-react/lib/components/time-controls/CurrentTimeDisplay";
 import TimeDivider from "video-react/lib/components/time-controls/TimeDivider";
 import VolumeMenuButton from "video-react/lib/components/control-bar/VolumeMenuButton";
-import './index.css';
 import BigPlayButton from "video-react/lib/components/BigPlayButton";
 import LoadingSpinner from "video-react/lib/components/LoadingSpinner";
+import 'video-react/dist/video-react.css';
+import './index.css';
 
 const VideoPlayer = () => {
   const player = useRef();
