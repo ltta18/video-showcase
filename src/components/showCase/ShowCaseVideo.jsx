@@ -5,6 +5,7 @@ import ControlBar from "video-react/lib/components/control-bar/ControlBar";
 import { CaretRightOutlined, PauseOutlined, ForwardOutlined, BackwardOutlined } from '@ant-design/icons';
 import './showcase.css';
 import 'video-react/dist/video-react.css';
+import { Link } from "react-router-dom";
 
 const ShowCaseVideo = () => {
   const player = useRef();
@@ -39,6 +40,7 @@ const ShowCaseVideo = () => {
   }
 
   return (
+    <Link to="/films">
     <Card
       bordered={false}
       style={{ width: 200 }}
@@ -77,6 +79,7 @@ const ShowCaseVideo = () => {
         </div>
         {console.log(player)}
     </Card>
+    </Link>
   );
 }
 

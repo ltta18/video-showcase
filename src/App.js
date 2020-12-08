@@ -6,14 +6,28 @@ import Layout from 'antd/lib/layout/layout';
 import CommonHeader from './components/common/CommonHeader';
 import ShowCaseVideo from './components/showCase/ShowCaseVideo';
 import VideoPlayer from './pages/VideoPlayer';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const App = () => {
   return (
-    <div className="App">
+    <Router className="App">
       <Layout className="layout" style={{height: '100%'}}>
-        <VideoPlayer />
+      <Switch>
+        <Route path="/films">
+          <VideoPlayer />
+        </Route>
+        <Route path="/">
+          <CommonHeader />
+          <ShowCaseVideo />
+        </Route>
+      </Switch>
       </Layout>
-    </div>
+    </Router>
   );
 }
 
