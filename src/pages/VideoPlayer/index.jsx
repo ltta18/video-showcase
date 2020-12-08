@@ -30,6 +30,18 @@ const VideoPlayer = () => {
     console.log(2)
   }
 
+  const enter = () => {
+    const player = document.getElementsByClassName('back-arrow')[0];
+    player.classList.add('back-arrow-hovered');
+    setTimeout(() => player.classList.remove('back-arrow-hovered'), 500);
+    clearTimeout()
+  }
+
+  const leave = () => {
+    const player = document.getElementsByClassName('back-arrow')[0];
+    player.classList.remove('back-arrow-hovered');
+  }
+
   useEffect(() => {
     // player && play();
     {console.log(player)}
@@ -42,6 +54,7 @@ const VideoPlayer = () => {
         className="back-arrow"
       />
       </Link>
+      <div style={{height: '100%'}} onMouseEnter={enter} onMouseLeave={leave} onMouseMove={enter}>
       <Player
           ref={curPlayer => player.current = curPlayer ? curPlayer.manager : curPlayer}
           className="video-player"
@@ -62,6 +75,7 @@ const VideoPlayer = () => {
             <VolumeMenuButton />
           </ControlBar>
         </Player>
+        </div>
     </>
   );
 }
