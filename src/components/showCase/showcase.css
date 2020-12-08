@@ -1,0 +1,12 @@
+video {
+  height: 112px;
+  background: #000;
+}
+
+.ant-card-body {
+  padding: 0;
+}
+
+.showcase-player {
+  display: none !important;
+}

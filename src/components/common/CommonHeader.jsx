@@ -22,7 +22,7 @@ const menu = (
 
 const onSearch = value => console.log(value);
 
-function CommonHeader() {
+const CommonHeader = () => {
   return (
         <Header className="header fl">
           <div className="logo">Haydenfilms</div>
