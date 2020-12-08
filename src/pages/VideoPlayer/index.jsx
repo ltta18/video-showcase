@@ -20,32 +20,20 @@ import { Link } from "react-router-dom";
 
 const VideoPlayer = () => {
   const player = useRef();
-  const [isPlay, setIsPlay] = useState(false);
-
-  const play = () => {
-    player.current.actions.play();
-  }
-
-  const click = () => {
-    console.log(2)
-  }
 
   const enter = () => {
-    const player = document.getElementsByClassName('back-arrow')[0];
-    player.classList.add('back-arrow-hovered');
-    setTimeout(() => player.classList.remove('back-arrow-hovered'), 500);
+    const arrow = document.getElementsByClassName('back-arrow')[0];
+    arrow.classList.add('back-arrow-hovered');
+    setTimeout(() => leave(), 500);
     clearTimeout()
   }
 
   const leave = () => {
-    const player = document.getElementsByClassName('back-arrow')[0];
-    player.classList.remove('back-arrow-hovered');
+    if (!player.current.getState().player.paused) {
+    const arrow = document.getElementsByClassName('back-arrow')[0];
+    arrow.classList.remove('back-arrow-hovered');
+    }
   }
-
-  useEffect(() => {
-    // player && play();
-    {console.log(player)}
-  }, [])
 
   return (
     <>
@@ -54,20 +42,20 @@ const VideoPlayer = () => {
         className="back-arrow"
       />
       </Link>
-      <div style={{height: '100%'}} onMouseEnter={enter} onMouseLeave={leave} onMouseMove={enter}>
+      <div
+        style={{height: '100%'}} onMouseEnter={enter} onMouseLeave={leave} onMouseMove={enter} onClick={enter}>
       <Player
           ref={curPlayer => player.current = curPlayer ? curPlayer.manager : curPlayer}
           className="video-player"
           fluid={false}
           height="100%"
           autoPlay
-          onClick={click}
           src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
         >
           <LoadingSpinner />
           <BigPlayButton position="center"/>
           <ControlBar autoHide={true}>
-            <PlayToggle/>
+            <PlayToggle />
             <ReplayControl seconds={10} order={1.1} />
             <ForwardControl seconds={30} order={1.2} />
             <CurrentTimeDisplay order={4.1} />
