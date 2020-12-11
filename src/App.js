@@ -11,8 +11,8 @@ import 'antd/dist/antd.css';
 import './css/base.css';
 import Layout from 'antd/lib/layout/layout';
 import CommonHeader from './components/common/CommonHeader';
-import ShowCaseVideo from './components/showCase/ShowCaseVideo';
 import VideoPlayer from './pages/VideoPlayer';
+import ShowCase from './pages/ShowCase';
 
 const App = () => (
   <Router className="App">
@@ -23,7 +23,7 @@ const App = () => (
         </Route>
         <Route path="/">
           <CommonHeader />
-          <ShowCaseVideo />
+          <ShowCase />
         </Route>
       </Switch>
     </Layout>

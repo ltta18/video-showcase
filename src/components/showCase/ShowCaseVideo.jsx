@@ -9,7 +9,9 @@ import 'video-react/dist/video-react.css';
 // eslint-disable-next-line import/no-unresolved
 import './showcase.css';
 
-const ShowCaseVideo = () => {
+const ShowCaseVideo = ({
+  src, title, author, view, create_at,
+}) => {
   const player = useRef();
 
   const play = () => {
@@ -33,13 +35,19 @@ const ShowCaseVideo = () => {
           playsInline
           ref={player}
         >
-          <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
+          <source src={src} />
           <ControlBar className="showcase-player" />
         </Player>
         <div>
-          <div className="video-title">Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)</div>
-          <div className="video-author">Pink Sweats</div>
-          <div className="video-subInfo">699K views • 1 year ago</div>
+          <div className="video-title">{title}</div>
+          <div className="video-author">{author}</div>
+          <div className="video-subInfo">
+            {view}
+            {' '}
+            views •
+            {' '}
+            {create_at}
+          </div>
         </div>
       </Card>
     </Link>
