@@ -1,86 +1,49 @@
-import { Button, Card } from "antd";
-import { useRef, useState } from "react";
+import { React, useRef } from 'react';
+import {
+  Card,
+} from 'antd';
+import { Link } from 'react-router-dom';
 import { Player } from 'video-react';
-import ControlBar from "video-react/lib/components/control-bar/ControlBar";
-import { CaretRightOutlined, PauseOutlined, ForwardOutlined, BackwardOutlined } from '@ant-design/icons';
-import './showcase.css';
+import ControlBar from 'video-react/lib/components/control-bar/ControlBar';
 import 'video-react/dist/video-react.css';
-import { Link } from "react-router-dom";
+// eslint-disable-next-line import/no-unresolved
+import './showcase.css';
 
 const ShowCaseVideo = () => {
   const player = useRef();
-  const [isPlay, setIsPlay] = useState(true)
-
-  const setMuted = muted => {
-    player.muted = muted;
-  }
-
-  const handleStateChange = state => {
-    // copy player state to this component's state
-    player.current = state
-  }
 
   const play = () => {
-    isPlay ? player.current.actions.pause() : player.current.actions.play();
-    setIsPlay(!isPlay);
-  }
+    player.current.actions.play();
+  };
 
-  const changeCurrentTime = seconds => {
-    const { currentTime } = player.current.video.video;
-    player.current.actions.seek(currentTime + seconds);
-  }
-
-  const seek = (seconds) => {
-    player.current.actions.seek(seconds);
-  }
-
-  const changeVolume = (steps) => {
-    const { volume } = player.current.video.video;
-    player.current.video.video.volume = volume + steps;
-  }
+  const stop = () => {
+    player.current.actions.pause();
+  };
 
   return (
-    <Link to="/films">
-    <Card
-      bordered={false}
-      style={{ width: 200 }}
-    >
-      <Player
-          autoPlay
+    <Link to="/films" style={{ width: 'fit-content' }}>
+      <Card
+        bordered={false}
+        className="showcase-card"
+        style={{ width: 200 }}
+        onMouseEnter={play}
+        onMouseLeave={stop}
+      >
+        <Player
           playsInline
           ref={player}
         >
-          <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"/>
-          <ControlBar className="showcase-player"/>
+          <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
+          <ControlBar className="showcase-player" />
         </Player>
-      <div className="py-3">
-            {isPlay
-            ? <PauseOutlined onClick={play} className="mr-3"/>
-            : <CaretRightOutlined onClick={play} className="mr-3"/>
-            }
+        <div>
+          <div className="video-title">Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)</div>
+          <div className="video-author">Pink Sweats</div>
+          <div className="video-subInfo">699K views • 1 year ago</div>
         </div>
-        <div className="pb-3">
-          <BackwardOutlined onClick={() => changeCurrentTime(-10)} className="mr-3"/>
-          <ForwardOutlined onClick={() => changeCurrentTime(10)} className="mr-3"/>
-        </div>
-        <div className="pb-3">
-          <Button onClick={() => changeVolume(0.1)} className="mr-3">
-            volume+=0.1
-          </Button>
-          <Button onClick={() => changeVolume(-0.1)} className="mr-3">
-            volume-=0.1
-          </Button>
-          <Button onClick={() => setMuted(true)} className="mr-3">
-            muted=true
-          </Button>
-          <Button onClick={() => setMuted(false)} className="mr-3">
-            muted=false
-          </Button>
-        </div>
-        {console.log(player)}
-    </Card>
+      </Card>
     </Link>
   );
-}
+};
 
 export default ShowCaseVideo;

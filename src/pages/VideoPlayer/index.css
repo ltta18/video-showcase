@@ -24,3 +24,12 @@
   transition: opacity 0.5s;
   opacity: 1;
 }
+
+.back-arrow:hover {
+  transform: scale(1.1);
+}
+
+.back-arrow:hover::after {
+  content: "Back to Browse";
+  color: "#fff";
+}

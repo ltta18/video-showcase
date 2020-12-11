@@ -3,10 +3,36 @@ video {
   background: #000;
 }
 
+.showcase-card {
+  width: 200px;
+  background: transparent;
+}
+
 .ant-card-body {
   padding: 0;
 }
 
 .showcase-player {
   display: none !important;
+}
+
+.video-title {
+  display: -webkit-box;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2em;
+  max-height: 2.4em;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.video-author {
+  color: gray;
+  margin-top: 10px;
+}
+
+.video-subInfo {
+  color: gray;
+
 }
