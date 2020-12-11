@@ -1,10 +1,11 @@
 import {
   React,
+  useEffect,
   useRef,
 } from 'react';
 import { Player } from 'video-react';
 import { ArrowLeftOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ControlBar from 'video-react/lib/components/control-bar/ControlBar';
 import ReplayControl from 'video-react/lib/components/control-bar/ReplayControl';
 import ForwardControl from 'video-react/lib/components/control-bar/ForwardControl';
@@ -19,6 +20,7 @@ import './index.css';
 
 const VideoPlayer = () => {
   const player = useRef();
+  const { id } = useParams();
 
   const leave = () => {
     if (!player.current?.getState().player.paused) {
@@ -33,6 +35,10 @@ const VideoPlayer = () => {
     setTimeout(() => leave(), 500);
     clearTimeout();
   };
+
+  useEffect(() => {
+    console.log(id);
+  }, []);
 
   return (
     <>

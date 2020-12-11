@@ -18,7 +18,7 @@ const App = () => (
   <Router className="App">
     <Layout className="layout" style={{ height: '100%' }}>
       <Switch>
-        <Route path="/films">
+        <Route path="/films/:id">
           <VideoPlayer />
         </Route>
         <Route path="/">

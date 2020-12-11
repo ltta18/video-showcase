@@ -12,6 +12,7 @@ import {
 import { Header } from 'antd/lib/layout/layout';
 import Search from 'antd/lib/input/Search';
 import './common.css';
+import { Link } from 'react-router-dom';
 
 const menu = (
   <Menu>
@@ -33,7 +34,9 @@ const onSearch = (value) => console.log(value);
 
 const CommonHeader = () => (
   <Header className="header fl">
-    <div className="logo">Haydenfilms</div>
+    <Link to="/" style={{ color: 'white' }}>
+      <div className="logo">Haydenfilms</div>
+    </Link>
     <Menu mode="horizontal" defaultSelectedKeys={['1']}>
       <Menu.Item key="1">Home</Menu.Item>
       <Menu.Item key="2">Movies</Menu.Item>
