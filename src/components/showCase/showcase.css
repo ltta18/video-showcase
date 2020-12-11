@@ -5,20 +5,37 @@ video {
 
 .showcase-card {
   width: 200px;
-  background: transparent;
+  /* background: transparent; */
 }
 
 .ant-card-body {
   padding: 0;
 }
 
+.showcase-card-container {
+  width: fit-content;
+}
+
 .showcase-player {
   display: none !important;
 }
 
+
+.showcase-card:hover .video-body {
+  opacity: 1;
+  height: fit-content;
+  padding: 5px;
+}
+
+.video-body {
+  transition: opacity 0.3s, height 0.3s;
+  opacity: 0;
+  height: 0;
+}
+
 .video-title {
   display: -webkit-box;
-  font-size: 16px;
+  font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.2em;
@@ -30,9 +47,10 @@ video {
 .video-author {
   color: gray;
   margin-top: 10px;
+  font-size: 12px;
 }
 
 .video-subInfo {
   color: gray;
-
+  font-size: 12px;
 }

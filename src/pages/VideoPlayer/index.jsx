@@ -23,13 +23,13 @@ const VideoPlayer = () => {
   const leave = () => {
     if (!player.current?.getState().player.paused) {
       const arrow = document.getElementsByClassName('back-arrow')[0];
-      arrow.classList.remove('back-arrow-hovered');
+      arrow?.classList.remove('back-arrow-hovered');
     }
   };
 
   const enter = () => {
     const arrow = document.getElementsByClassName('back-arrow')[0];
-    arrow.classList.add('back-arrow-hovered');
+    arrow?.classList.add('back-arrow-hovered');
     setTimeout(() => leave(), 500);
     clearTimeout();
   };

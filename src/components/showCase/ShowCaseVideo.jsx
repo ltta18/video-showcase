@@ -1,4 +1,5 @@
 import { React, useRef } from 'react';
+import PropTypes from 'prop-types';
 import {
   Card,
 } from 'antd';
@@ -10,7 +11,7 @@ import 'video-react/dist/video-react.css';
 import './showcase.css';
 
 const ShowCaseVideo = ({
-  src, title, author, view, create_at,
+  src, title, author, view, createAt,
 }) => {
   const player = useRef();
 
@@ -23,7 +24,7 @@ const ShowCaseVideo = ({
   };
 
   return (
-    <Link to="/films" style={{ width: 'fit-content' }}>
+    <Link to="/films" className="showcase-card-container">
       <Card
         bordered={false}
         className="showcase-card"
@@ -38,20 +39,30 @@ const ShowCaseVideo = ({
           <source src={src} />
           <ControlBar className="showcase-player" />
         </Player>
-        <div>
-          <div className="video-title">{title}</div>
-          <div className="video-author">{author}</div>
-          <div className="video-subInfo">
-            {view}
-            {' '}
-            views •
-            {' '}
-            {create_at}
+        <div style={{ position: 'relative' }}>
+          <div className="video-body">
+            <div className="video-title">{title}</div>
+            <div className="video-author">{author}</div>
+            <div className="video-subInfo">
+              {view}
+              {' '}
+              views •
+              {' '}
+              {createAt}
+            </div>
           </div>
         </div>
       </Card>
     </Link>
   );
+};
+
+ShowCaseVideo.propTypes = {
+  src: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  view: PropTypes.string.isRequired,
+  createAt: PropTypes.string.isRequired,
 };
 
 export default ShowCaseVideo;

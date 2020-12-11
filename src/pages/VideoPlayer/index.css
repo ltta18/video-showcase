@@ -27,9 +27,13 @@
 
 .back-arrow:hover {
   transform: scale(1.1);
+  transition: 0.3s;
 }
 
 .back-arrow:hover::after {
   content: "Back to Browse";
   color: "#fff";
+  font-size: 14px;
+  margin-left: 5px;
+  vertical-align: super;
 }

@@ -1,6 +1,7 @@
 import {
   React,
 } from 'react';
+import { Content } from 'antd/lib/layout/layout';
 import Carousel from 'react-multi-carousel';
 import ShowCaseVideo from '../../components/showCase/ShowCaseVideo';
 import 'react-multi-carousel/lib/styles.css';
@@ -26,129 +27,131 @@ const responsive = {
 };
 
 const ShowCase = () => (
-  <Carousel
-    responsive={responsive}
-    infinite={false}
-    swipeable
-  >
-    <div>
-      <ShowCaseVideo
-        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-        title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
-        author="Pink Sweats"
-        view="699K"
-        create_at="1 year ago"
-      />
-    </div>
-    <div>
-      <ShowCaseVideo
-        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-        title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
-        author="Pink Sweats"
-        view="699K"
-        create_at="1 year ago"
-      />
-    </div>
-    <div>
-      <ShowCaseVideo
-        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-        title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
-        author="Pink Sweats"
-        view="699K"
-        create_at="1 year ago"
-      />
-    </div>
-    <div>
-      <ShowCaseVideo
-        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-        title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
-        author="Pink Sweats"
-        view="699K"
-        create_at="1 year ago"
-      />
-    </div>
-    <div>
-      <ShowCaseVideo
-        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-        title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
-        author="Pink Sweats"
-        view="699K"
-        create_at="1 year ago"
-      />
-    </div>
-    <div>
-      <ShowCaseVideo
-        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-        title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
-        author="Pink Sweats"
-        view="699K"
-        create_at="1 year ago"
-      />
-    </div>
-    <div>
-      <ShowCaseVideo
-        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-        title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
-        author="Pink Sweats"
-        view="699K"
-        create_at="1 year ago"
-      />
-    </div>
-    <div>
-      <ShowCaseVideo
-        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-        title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
-        author="Pink Sweats"
-        view="699K"
-        create_at="1 year ago"
-      />
-    </div>
-    <div>
-      <ShowCaseVideo
-        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-        title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
-        author="Pink Sweats"
-        view="699K"
-        create_at="1 year ago"
-      />
-    </div>
-    <div>
-      <ShowCaseVideo
-        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-        title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
-        author="Pink Sweats"
-        view="699K"
-        create_at="1 year ago"
-      />
-    </div>
-    <div>
-      <ShowCaseVideo
-        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-        title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
-        author="Pink Sweats"
-        view="699K"
-        create_at="1 year ago"
-      />
-    </div>
-    <div>
-      <ShowCaseVideo
-        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-        title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
-        author="Pink Sweats"
-        view="699K"
-        create_at="1 year ago"
-      />
-    </div>
-    <div>
-      <ShowCaseVideo
-        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-        title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
-        author="Pink Sweats"
-        view="699K"
-        create_at="1 year ago"
-      />
-    </div>
-  </Carousel>
+  <Content style={{ marginTop: 100, marginLeft: 10, marginRight: 10 }}>
+    <Carousel
+      responsive={responsive}
+      infinite={false}
+      swipeable
+    >
+      <div>
+        <ShowCaseVideo
+          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
+          author="Pink Sweats"
+          view="699K"
+          createAt="1 year ago"
+        />
+      </div>
+      <div>
+        <ShowCaseVideo
+          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
+          author="Pink Sweats"
+          view="699K"
+          createAt="1 year ago"
+        />
+      </div>
+      <div>
+        <ShowCaseVideo
+          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
+          author="Pink Sweats"
+          view="699K"
+          createAt="1 year ago"
+        />
+      </div>
+      <div>
+        <ShowCaseVideo
+          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
+          author="Pink Sweats"
+          view="699K"
+          createAt="1 year ago"
+        />
+      </div>
+      <div>
+        <ShowCaseVideo
+          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
+          author="Pink Sweats"
+          view="699K"
+          createAt="1 year ago"
+        />
+      </div>
+      <div>
+        <ShowCaseVideo
+          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
+          author="Pink Sweats"
+          view="699K"
+          createAt="1 year ago"
+        />
+      </div>
+      <div>
+        <ShowCaseVideo
+          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
+          author="Pink Sweats"
+          view="699K"
+          createAt="1 year ago"
+        />
+      </div>
+      <div>
+        <ShowCaseVideo
+          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
+          author="Pink Sweats"
+          view="699K"
+          createAt="1 year ago"
+        />
+      </div>
+      <div>
+        <ShowCaseVideo
+          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
+          author="Pink Sweats"
+          view="699K"
+          createAt="1 year ago"
+        />
+      </div>
+      <div>
+        <ShowCaseVideo
+          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
+          author="Pink Sweats"
+          view="699K"
+          createAt="1 year ago"
+        />
+      </div>
+      <div>
+        <ShowCaseVideo
+          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
+          author="Pink Sweats"
+          view="699K"
+          createAt="1 year ago"
+        />
+      </div>
+      <div>
+        <ShowCaseVideo
+          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
+          author="Pink Sweats"
+          view="699K"
+          createAt="1 year ago"
+        />
+      </div>
+      <div>
+        <ShowCaseVideo
+          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          title="Pink Sweat$ & Crush - I Wanna Be Yours (In Studio)"
+          author="Pink Sweats"
+          view="699K"
+          createAt="1 year ago"
+        />
+      </div>
+    </Carousel>
+  </Content>
 );
 
 export default ShowCase;

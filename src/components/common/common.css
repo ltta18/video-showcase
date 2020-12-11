@@ -15,6 +15,11 @@
   border-bottom: 1px solid #000;
 }
 
+.ant-dropdown-link {
+  background: transparent;
+  border: none;
+}
+
 .common-header-right {
   margin-left: auto;
 }
