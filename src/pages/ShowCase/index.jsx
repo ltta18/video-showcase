@@ -4,7 +4,7 @@ import {
 import { Content } from 'antd/lib/layout/layout';
 import Carousel from 'react-multi-carousel';
 import ShowCaseVideo from '../../components/showCase/ShowCaseVideo';
-import getVideos from '../../api/index';
+import { getVideos } from '../../api/index';
 import 'react-multi-carousel/lib/styles.css';
 
 const responsive = {

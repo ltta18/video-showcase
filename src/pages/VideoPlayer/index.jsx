@@ -2,6 +2,7 @@ import {
   React,
   useEffect,
   useRef,
+  useState,
 } from 'react';
 import { Player } from 'video-react';
 import { ArrowLeftOutlined } from '@ant-design/icons';
@@ -15,10 +16,12 @@ import VolumeMenuButton from 'video-react/lib/components/control-bar/VolumeMenuB
 import BigPlayButton from 'video-react/lib/components/BigPlayButton';
 import LoadingSpinner from 'video-react/lib/components/LoadingSpinner';
 import PlayToggle from 'video-react/lib/components/control-bar/PlayToggle';
+import { getVideoById } from '../../api/index';
 import 'video-react/dist/video-react.css';
 import './index.css';
 
 const VideoPlayer = () => {
+  const [video, setVideo] = useState();
   const player = useRef();
   const { id } = useParams();
 
@@ -37,7 +40,11 @@ const VideoPlayer = () => {
   };
 
   useEffect(() => {
-    console.log(id);
+    const get = async () => {
+      const response = await getVideoById(id);
+      setVideo(response);
+    };
+    get();
   }, []);
 
   return (
@@ -58,7 +65,7 @@ const VideoPlayer = () => {
           fluid={false}
           height="100%"
           autoPlay
-          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          src={video?.url}
         >
           <LoadingSpinner />
           <BigPlayButton position="center" />
