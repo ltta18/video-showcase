@@ -3,9 +3,11 @@ import {
 } from 'react';
 import { Content } from 'antd/lib/layout/layout';
 import Carousel from 'react-multi-carousel';
+import PropTypes from 'prop-types';
 import ShowCaseVideo from '../../components/showCase/ShowCaseVideo';
 import { getVideos } from '../../api/index';
 import 'react-multi-carousel/lib/styles.css';
+import './index.css';
 
 const responsive = {
   superLargeDesktop: {
@@ -27,10 +29,12 @@ const responsive = {
   },
 };
 
-const ShowCase = () => {
+const ShowCase = ({ title }) => {
   // eslint-disable-next-line no-unused-vars
   const [isHover, setIsHover] = useState(false);
   const [videos, setVideos] = useState([]);
+
+  const formatDate = (date) => `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
 
   useEffect(() => {
     const get = async () => {
@@ -41,12 +45,13 @@ const ShowCase = () => {
   }, []);
 
   return (
-    <Content style={{ marginTop: 100, marginLeft: 10, marginRight: 10 }}>
+    <Content className="showcase">
+      <h1>{title}</h1>
       <Carousel
         responsive={responsive}
         infinite={false}
         swipeable
-        // arrows={!isHover}
+        arrows={!isHover}
       >
         {videos.map((video) => (
           <div>
@@ -55,7 +60,7 @@ const ShowCase = () => {
               title={video.title}
               author={video.author}
               view={video.view}
-              createdAt={video.createdAt?.toString()}
+              createAt={formatDate(new Date(video.createAt)).toString()}
               setHover={(val) => setIsHover(val)}
               id={video._id}
               key={video._id}
@@ -65,6 +70,10 @@ const ShowCase = () => {
       </Carousel>
     </Content>
   );
+};
+
+ShowCase.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 export default ShowCase;

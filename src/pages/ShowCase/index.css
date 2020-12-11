@@ -1,0 +1,20 @@
+.react-multiple-carousel__arrow--right {
+  right: calc(1%);
+  height: 112.5px;
+  width: 70px;
+  border-radius: 0;
+}
+
+.react-multiple-carousel__arrow--left {
+  left: 0;
+  height: 112.5px;
+  width: 70px;
+  border-radius: 0;
+}
+
+.showcase {
+  margin-top: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 160px;
+}

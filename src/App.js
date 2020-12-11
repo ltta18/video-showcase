@@ -23,7 +23,15 @@ const App = () => (
         </Route>
         <Route path="/">
           <CommonHeader />
-          <ShowCase />
+          <ShowCase title="Trending Now" />
+          <ShowCase title="Top 10 in US Today" />
+          <ShowCase title="Popular" />
+          <div style={{
+            marginTop: 100, background: '#000', color: '#fff', textAlign: 'center',
+          }}
+          >
+            Showcase Videos
+          </div>
         </Route>
       </Switch>
     </Layout>

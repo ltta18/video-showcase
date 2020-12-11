@@ -13,7 +13,7 @@ import 'video-react/dist/video-react.css';
 import './showcase.css';
 
 const ShowCaseVideo = ({
-  src, title, author, view, createdAt, setHover, id,
+  src, title, author, view, createAt, setHover, id,
 }) => {
   const player = useRef();
   const [duration, setDuration] = useState();
@@ -61,7 +61,7 @@ const ShowCaseVideo = ({
               {' '}
               views •
               {' '}
-              {createdAt}
+              {createAt}
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ ShowCaseVideo.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   view: PropTypes.string.isRequired,
-  createdAt: PropTypes.string.isRequired,
+  createAt: PropTypes.string.isRequired,
   setHover: PropTypes.func.isRequired,
 };
 
